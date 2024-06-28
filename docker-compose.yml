@@ -1,0 +1,10 @@
+services:
+  nmrih:
+    image: steamcmd:custom
+    build: ./nmrih
+    entrypoint: /entrypoint.sh
+    ports:
+      - 27015:27015/udp
+      - 27015:27015/tcp
+    volumes:
+      - ./nmrih/server.cfg:/NMRiHServer/nmrih/cfg/server.cfg:ro
